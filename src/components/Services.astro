@@ -1,0 +1,56 @@
+---
+const services = [
+  {
+    icon: '📊',
+    title: 'Contabilidad',
+    items: ['Ingresos y egresos', 'Conciliaciones bancarias', 'Estados financieros', 'Informes contables'],
+  },
+  {
+    icon: '👥',
+    title: 'Nómina y Seguridad Social',
+    items: ['Liquidación de nómina', 'Seguridad social', 'Prestaciones sociales', 'Certificados laborales'],
+  },
+  {
+    icon: '🧾',
+    title: 'Facturación',
+    items: ['Facturación electrónica', 'Notas crédito / débito', 'Control de cartera (cuentas por cobrar)'],
+  },
+  {
+    icon: '🏛️',
+    title: 'Servicios Tributarios',
+    items: ['Declaración de renta', 'IVA', 'Retención en la fuente', 'ICA', 'RUT'],
+  },
+  {
+    icon: '🏢',
+    title: 'Servicios Administrativos',
+    items: ['Organización documental', 'Control de gastos', 'Informes administrativos'],
+  },
+];
+---
+<section id="servicios" class="bg-navy-50 py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14">
+      <span class="text-sac-green-600 font-semibold uppercase tracking-widest text-sm">Nuestros servicios</span>
+      <h2 class="font-display text-3xl md:text-4xl font-extrabold text-navy-900 mt-2">Todo lo que tu negocio necesita</h2>
+      <p class="text-navy-600 mt-4 max-w-2xl mx-auto">Cubrimos la gestión contable, tributaria y administrativa de principio a fin, para que tú solo te ocupes de crecer.</p>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {services.map((s) => (
+        <div class="bg-white rounded-2xl p-7 border border-navy-100 shadow-sm hover:shadow-lg hover:border-sac-green-300 transition-all">
+          <div class="w-14 h-14 rounded-xl bg-sac-green-50 flex items-center justify-center text-2xl mb-5">{s.icon}</div>
+          <h3 class="font-display text-xl font-bold text-navy-900 mb-4">{s.title}</h3>
+          <ul class="space-y-2">
+            {s.items.map((it) => (
+              <li class="flex items-start gap-2 text-navy-600 text-sm">
+                <svg class="w-4 h-4 text-sac-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {it}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

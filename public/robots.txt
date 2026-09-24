@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anlu-web.pages.dev/sitemap.xml

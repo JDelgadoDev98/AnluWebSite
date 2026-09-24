@@ -1,0 +1,48 @@
+---
+const reasons = [
+  { icon: '🤝', title: 'Acompañamiento personalizado', text: 'No eres un número. Te asesoramos de forma cercana según la realidad de tu negocio.' },
+  { icon: '💻', title: '100% virtual', text: 'Recibimos y organizamos tus documentos de manera virtual. Sin desplazamientos, sin filas.' },
+  { icon: '📅', title: 'Siempre al día', text: 'Mantenemos tus obligaciones contables y tributarias organizadas y a tiempo.' },
+  { icon: '💸', title: 'Precios transparentes', text: 'Planes claros desde $300.000/mes y servicios adicionales cotizados a tu medida.' },
+];
+---
+<section id="nosotros" class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-sac-green-600 font-semibold uppercase tracking-widest text-sm">¿Quiénes somos?</span>
+        <h2 class="font-display text-3xl md:text-4xl font-extrabold text-navy-900 mt-2 mb-5">Tu tranquilidad contable, nuestra prioridad</h2>
+        <p class="text-navy-600 leading-relaxed mb-4">
+          En <strong class="text-navy-900">SAC — Servicios Administrativos y Contables</strong> brindamos soluciones contables y administrativas
+          para personas naturales, emprendedores y pequeñas empresas, ofreciendo acompañamiento personalizado para mantener
+          tus obligaciones organizadas y al día.
+        </p>
+        <p class="text-navy-600 leading-relaxed mb-8">
+          Soluciones para tu tranquilidad, presentadas por <strong class="text-navy-900">Ana María Luna</strong>.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-5">
+          {reasons.map((r) => (
+            <div class="flex gap-4">
+              <div class="w-11 h-11 rounded-xl bg-sac-green-50 flex items-center justify-center text-xl flex-shrink-0">{r.icon}</div>
+              <div>
+                <h3 class="font-display font-bold text-navy-900 mb-1">{r.title}</h3>
+                <p class="text-sm text-navy-600">{r.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-sac-green-500/10 to-navy-900/5 rounded-3xl -rotate-2"></div>
+        <div class="relative bg-navy-900 rounded-3xl p-10 text-center text-white shadow-xl">
+          <div class="bg-white rounded-2xl p-6 inline-block mb-6">
+            <img src="/images/logo-sac.jpg" alt="SAC" class="w-40 h-40 object-contain" width="160" height="160" />
+          </div>
+          <p class="font-display text-2xl font-bold text-sac-green-400 mb-2">Soluciones para su tranquilidad</p>
+          <p class="text-navy-200 text-sm">Contabilidad · Nómina · Facturación · Tributario · Administrativo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

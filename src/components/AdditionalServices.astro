@@ -1,0 +1,41 @@
+---
+const wa = 'https://wa.me/573000000000?text=' + encodeURIComponent('Hola SAC, quiero cotizar un servicio adicional');
+const extras = [
+  { name: 'Nómina y Seguridad Social', price: 'Desde $150.000 / mes' },
+  { name: 'Facturación electrónica', price: 'Desde $150.000 / mes' },
+  { name: 'Declaración de IVA', price: 'Desde $200.000' },
+  { name: 'Retención en la fuente', price: 'Desde $170.000' },
+  { name: 'ICA', price: 'Desde $150.000' },
+  { name: 'Renta Persona Natural', price: 'Desde $260.000' },
+  { name: 'Renta Persona Jurídica', price: 'Desde $600.000' },
+  { name: 'Informe contable', price: 'Desde $200.000' },
+  { name: 'Asesoría contable', price: 'Desde $80.000' },
+];
+---
+<section id="adicionales" class="bg-navy-50 py-20">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="text-sac-green-600 font-semibold uppercase tracking-widest text-sm">Servicios adicionales</span>
+      <h2 class="font-display text-3xl md:text-4xl font-extrabold text-navy-900 mt-2">Contrata solo lo que necesitas</h2>
+      <p class="text-navy-600 mt-4 max-w-2xl mx-auto">Estos servicios no están incluidos en los paquetes mensuales o pueden contratarse de manera independiente.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-navy-100 shadow-sm overflow-hidden divide-y divide-navy-100">
+      {extras.map((e) => (
+        <div class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-sac-green-50/50 transition-colors">
+          <span class="text-navy-800 font-medium">{e.name}</span>
+          <span class="text-sac-green-700 font-bold whitespace-nowrap">{e.price}</span>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-navy-500 text-sm mt-8 max-w-2xl mx-auto">
+      Todos nuestros servicios se cotizan de acuerdo con el volumen de operaciones, complejidad y necesidades de cada cliente.
+    </p>
+    <div class="text-center mt-6">
+      <a href={wa} target="_blank" rel="noopener noreferrer" class="inline-block bg-sac-green-600 hover:bg-sac-green-500 text-white font-bold px-8 py-3.5 rounded-full transition-colors">
+        Cotizar un servicio
+      </a>
+    </div>
+  </div>
+</section>

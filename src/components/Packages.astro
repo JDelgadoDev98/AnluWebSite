@@ -1,0 +1,103 @@
+---
+const wa = (plan: string) => 'https://wa.me/573000000000?text=' + encodeURIComponent(`Hola SAC, me interesa el ${plan}`);
+
+const packages = [
+  {
+    name: 'Paquete Básico',
+    price: '$300.000',
+    ideal: 'Personas independientes, emprendedores y pequeños negocios con movimiento contable moderado.',
+    featured: false,
+    limit: 'Hasta 50 documentos contables/mes y 2 cuentas bancarias.',
+    includes: [
+      'Registro y clasificación de ingresos y gastos',
+      'Causación de facturas de compra',
+      'Organización de documentos contables',
+      'Conciliación bancaria básica',
+      'Control básico de cuentas por cobrar y pagar',
+      'Estados financieros básicos',
+      'Informe contable mensual',
+      'Asesoría contable básica',
+      'Recepción y organización de documentos virtual',
+    ],
+  },
+  {
+    name: 'Paquete Emprendedor',
+    price: '$500.000',
+    ideal: 'Emprendimientos y pequeñas empresas con mayor movimiento que requieren acompañamiento más completo.',
+    featured: true,
+    limit: 'Hasta 100 documentos contables/mes y 3 cuentas bancarias.',
+    includes: [
+      'Todo lo del Paquete Básico',
+      'Registro de hasta 100 documentos mensuales',
+      'Conciliaciones bancarias',
+      'Informe de cartera',
+      'Informe de cuentas por pagar',
+      'Seguimiento de ingresos y gastos',
+      'Informe financiero',
+      'Análisis básico de resultados',
+      'Revisión de obligaciones tributarias',
+      'Asesoría contable mensual',
+    ],
+  },
+  {
+    name: 'Paquete Integral',
+    price: '$1.000.000',
+    ideal: 'Pequeñas empresas que buscan delegar gran parte de la gestión contable y recibir acompañamiento periódico.',
+    featured: false,
+    limit: 'Hasta 200 documentos contables/mes y 5 cuentas bancarias.',
+    includes: [
+      'Todo lo del Paquete Emprendedor',
+      'Registro de hasta 200 documentos mensuales',
+      'Conciliaciones bancarias completas',
+      'Informe de cartera y proveedores',
+      'Informes financieros mensuales',
+      'Facturación electrónica (precio adicional)',
+      'Asesoría contable y tributaria',
+      'Reunión mensual de seguimiento',
+      'Acompañamiento personalizado',
+    ],
+  },
+];
+---
+<section id="paquetes" class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14">
+      <span class="text-sac-green-600 font-semibold uppercase tracking-widest text-sm">Planes mensuales</span>
+      <h2 class="font-display text-3xl md:text-4xl font-extrabold text-navy-900 mt-2">Precios claros, sin sorpresas</h2>
+      <p class="text-navy-600 mt-4 max-w-2xl mx-auto">Elige el plan que se ajusta a tu volumen de operaciones. Todos incluyen acompañamiento personalizado y atención virtual.</p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-3 items-start">
+      {packages.map((p) => (
+        <div class={`relative rounded-3xl p-8 border transition-all ${p.featured ? 'bg-navy-900 text-white border-sac-green-500 shadow-2xl lg:-mt-4 lg:mb-4' : 'bg-white text-navy-900 border-navy-100 shadow-sm hover:shadow-lg'}`}>
+          {p.featured && (
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sac-green-500 text-navy-950 text-xs font-bold px-4 py-1 rounded-full uppercase">Más popular</span>
+          )}
+          <h3 class={`font-display text-2xl font-bold ${p.featured ? 'text-white' : 'text-navy-900'}`}>{p.name}</h3>
+          <div class="mt-4 mb-1">
+            <span class={`text-4xl font-extrabold ${p.featured ? 'text-sac-green-400' : 'text-sac-green-600'}`}>{p.price}</span>
+            <span class={`text-sm ml-1 ${p.featured ? 'text-navy-200' : 'text-navy-500'}`}>COP / mes</span>
+          </div>
+          <p class={`text-sm mb-6 ${p.featured ? 'text-navy-200' : 'text-navy-500'}`}>{p.ideal}</p>
+          <a href={wa(p.name)} target="_blank" rel="noopener noreferrer" class={`block text-center font-bold py-3.5 rounded-xl transition-colors mb-6 ${p.featured ? 'bg-sac-green-500 hover:bg-sac-green-400 text-navy-950' : 'bg-navy-900 hover:bg-navy-800 text-white'}`}>
+            Contratar este plan
+          </a>
+          <ul class="space-y-2.5">
+            {p.includes.map((it) => (
+              <li class={`flex items-start gap-2 text-sm ${p.featured ? 'text-navy-100' : 'text-navy-600'}`}>
+                <svg class={`w-4 h-4 flex-shrink-0 mt-0.5 ${p.featured ? 'text-sac-green-400' : 'text-sac-green-500'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {it}
+              </li>
+            ))}
+          </ul>
+          <p class={`text-xs mt-6 pt-4 border-t ${p.featured ? 'text-navy-300 border-white/10' : 'text-navy-400 border-navy-100'}`}>{p.limit}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-center text-navy-500 text-sm mt-10 max-w-3xl mx-auto">
+      Las declaraciones tributarias, nómina, facturación electrónica y otros servicios especializados se cotizan por separado.
+    </p>
+  </div>
+</section>

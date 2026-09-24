@@ -1,0 +1,23 @@
+---
+const wa = 'https://wa.me/573000000000?text=' + encodeURIComponent('Hola SAC, quiero una asesoría contable');
+---
+<header class="bg-white/90 backdrop-blur-md border-b border-navy-100 shadow-sm sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="/images/logo-sac.jpg" alt="SAC — Servicios Administrativos y Contables" class="h-14 md:h-16 w-auto" width="64" height="64" />
+    </a>
+    <nav class="hidden md:flex items-center gap-7 font-medium text-navy-800">
+      <a href="#servicios" class="hover:text-sac-green-600 transition-colors">Servicios</a>
+      <a href="#paquetes" class="hover:text-sac-green-600 transition-colors">Paquetes</a>
+      <a href="#adicionales" class="hover:text-sac-green-600 transition-colors">Adicionales</a>
+      <a href="#nosotros" class="hover:text-sac-green-600 transition-colors">Nosotros</a>
+      <a href="#contacto" class="hover:text-sac-green-600 transition-colors">Contacto</a>
+      <a href={wa} target="_blank" rel="noopener noreferrer" class="bg-sac-green-600 hover:bg-sac-green-500 text-white px-5 py-2 rounded-full font-semibold transition-colors">
+        Asesoría gratis
+      </a>
+    </nav>
+    <a href={wa} target="_blank" rel="noopener noreferrer" class="md:hidden bg-sac-green-600 hover:bg-sac-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+      Cotizar
+    </a>
+  </div>
+</header>

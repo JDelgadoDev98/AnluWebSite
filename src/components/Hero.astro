@@ -1,0 +1,43 @@
+---
+const wa = 'https://wa.me/573000000000?text=' + encodeURIComponent('Hola SAC, quiero organizar la contabilidad de mi negocio');
+---
+<section class="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 text-white">
+  <!-- Acento verde decorativo -->
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-sac-green-500/20 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-32 -left-20 w-96 h-96 bg-sac-green-600/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <p class="inline-block bg-sac-green-500/15 text-sac-green-300 text-sm font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+        Servicios contables y administrativos
+      </p>
+      <h1 class="font-display text-4xl md:text-5xl font-extrabold leading-tight mb-5">
+        Mantén tus obligaciones
+        <span class="bg-gradient-to-r from-sac-green-400 to-sac-green-200 bg-clip-text text-transparent"> organizadas y al día</span>
+      </h1>
+      <p class="text-lg text-navy-100 max-w-xl mb-8">
+        Soluciones contables para personas naturales, emprendedores y pequeñas empresas.
+        Acompañamiento personalizado para que dediques tu tiempo a crecer, no a preocuparte por los impuestos.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href={wa} target="_blank" rel="noopener noreferrer" class="inline-block text-center bg-sac-green-500 hover:bg-sac-green-400 text-navy-950 font-bold px-8 py-4 rounded-full text-lg transition-transform hover:scale-105 shadow-xl">
+          Solicita tu asesoría gratis
+        </a>
+        <a href="#paquetes" class="inline-block text-center border-2 border-white/30 hover:border-sac-green-400 hover:text-sac-green-300 text-white font-bold px-8 py-4 rounded-full text-lg transition-all">
+          Ver planes y precios
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-x-8 gap-y-3 mt-10 text-sm text-navy-200">
+        <span class="flex items-center gap-2"><span class="text-sac-green-400">✓</span> Atención 100% virtual</span>
+        <span class="flex items-center gap-2"><span class="text-sac-green-400">✓</span> Planes desde $300.000/mes</span>
+        <span class="flex items-center gap-2"><span class="text-sac-green-400">✓</span> Sin permanencia</span>
+      </div>
+    </div>
+
+    <div class="flex justify-center md:justify-end">
+      <div class="bg-white rounded-3xl p-8 shadow-2xl">
+        <img src="/images/logo-sac.jpg" alt="Logo SAC" class="w-56 h-56 md:w-72 md:h-72 object-contain" width="288" height="288" />
+      </div>
+    </div>
+  </div>
+</section>
