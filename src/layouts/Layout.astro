@@ -1,15 +1,24 @@
 ---
+import '@fontsource/montserrat/600.css';
+import '@fontsource/montserrat/700.css';
+import '@fontsource/montserrat/800.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import { SITE, PACKAGES, whatsappLink } from '../config/site';
+
 interface Props {
   title?: string;
   description?: string;
 }
 const {
-  title = 'SAC — Servicios Administrativos y Contables',
+  title = SITE.name,
   description = 'Soluciones contables y administrativas para personas naturales, emprendedores y pequeñas empresas. Contabilidad, nómina, facturación electrónica y servicios tributarios con acompañamiento personalizado.',
 } = Astro.props;
-const siteUrl = 'https://anlu-web.pages.dev';
-const wa = 'https://wa.me/573218321960?text=' + encodeURIComponent('Hola SAC, quiero información sobre sus servicios contables');
+const siteUrl = SITE.url;
+const wa = whatsappLink('Hola SAC, quiero información sobre sus servicios contables');
 ---
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -17,7 +26,7 @@ const wa = 'https://wa.me/573218321960?text=' + encodeURIComponent('Hola SAC, qu
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="keywords" content="servicios contables, contabilidad, nómina, facturación electrónica, declaración de renta, IVA, retención en la fuente, ICA, RUT, contador, pymes, emprendedores, Colombia, SAC" />
-    <meta name="author" content="SAC — Servicios Administrativos y Contables" />
+    <meta name="author" content={SITE.name} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={siteUrl} />
 
@@ -26,6 +35,7 @@ const wa = 'https://wa.me/573218321960?text=' + encodeURIComponent('Hola SAC, qu
     <meta property="og:description" content={description} />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:image" content={`${siteUrl}/images/logo-sac.jpg`} />
+    <meta property="og:image:alt" content="Logo de SAC - Servicios Administrativos y Contables" />
     <meta property="og:site_name" content="SAC" />
     <meta property="og:locale" content="es_CO" />
 
@@ -33,28 +43,24 @@ const wa = 'https://wa.me/573218321960?text=' + encodeURIComponent('Hola SAC, qu
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}/images/logo-sac.jpg`} />
+    <meta name="twitter:image:alt" content="Logo de SAC - Servicios Administrativos y Contables" />
 
     <link rel="icon" type="image/jpeg" href="/images/logo-mark.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     <title>{title}</title>
 
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "AccountingService",
-      "name": "SAC — Servicios Administrativos y Contables",
+      "name": SITE.name,
       "description": description,
       "url": siteUrl,
       "image": `${siteUrl}/images/logo-sac.jpg`,
       "areaServed": ["Colombia"],
       "priceRange": "$$",
-      "founder": { "@type": "Person", "name": "Ana María Luna" },
-      "makesOffer": [
-        { "@type": "Offer", "name": "Paquete Básico", "price": "300000", "priceCurrency": "COP" },
-        { "@type": "Offer", "name": "Paquete Emprendedor", "price": "500000", "priceCurrency": "COP" },
-        { "@type": "Offer", "name": "Paquete Integral", "price": "1000000", "priceCurrency": "COP" }
-      ]
+      "founder": { "@type": "Person", "name": SITE.founder },
+      "telephone": `+${SITE.phone}`,
+      "email": SITE.email,
+      "makesOffer": PACKAGES.map((p) => ({ "@type": "Offer", "name": p.name, "price": String(p.priceValue), "priceCurrency": "COP" }))
     })} />
   </head>
   <body class="font-body bg-white text-navy-900 antialiased">

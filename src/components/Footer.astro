@@ -1,4 +1,5 @@
 ---
+import { SITE } from '../config/site';
 const year = new Date().getFullYear();
 ---
 <footer class="bg-navy-950 text-navy-300 py-12">
@@ -8,7 +9,7 @@ const year = new Date().getFullYear();
         <div class="bg-white rounded-xl p-3 inline-block">
           <img src="/images/logo-sac.jpg" alt="SAC — Servicios Administrativos y Contables" class="h-16 w-auto" width="64" height="64" />
         </div>
-        <p class="text-sm mt-3 text-navy-400 max-w-xs">Soluciones contables y administrativas para tu tranquilidad.</p>
+        <p class="text-sm mt-3 text-navy-300 max-w-xs">Soluciones contables y administrativas para tu tranquilidad.</p>
       </div>
 
       <nav class="flex flex-col sm:flex-row gap-x-8 gap-y-2 text-sm">
@@ -20,9 +21,9 @@ const year = new Date().getFullYear();
       </nav>
     </div>
 
-    <div class="border-t border-navy-800 mt-10 pt-6 text-center text-xs text-navy-500">
+    <div class="border-t border-navy-800 mt-10 pt-6 text-center text-xs text-navy-400">
       <p>&copy; {year} SAC — Servicios Administrativos y Contables. Todos los derechos reservados.</p>
-      <p class="mt-1">Presentado por Ana María Luna.</p>
+      <p class="mt-1">Presentado por {SITE.founder}.</p>
     </div>
   </div>
 </footer>

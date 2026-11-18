@@ -1,5 +1,6 @@
 ---
-const wa = 'https://wa.me/573218321960?text=' + encodeURIComponent('Hola SAC, quiero una asesoría contable');
+import { whatsappLink } from '../config/site';
+const wa = whatsappLink('Hola SAC, quiero una asesoría contable');
 ---
 <header class="bg-white/90 backdrop-blur-md border-b border-navy-100 shadow-sm sticky top-0 z-40">
   <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
